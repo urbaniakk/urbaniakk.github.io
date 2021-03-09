@@ -1,19 +1,35 @@
-p
-{
-    font-size: 40px;
-    font-weight: 700;
-    color: rgb(136, 23, 23);
-    font-family: 'Passion One', cursive;
-    animation-name: changeColor;
-    animation-direction:  alternate;
-    animation-iteration-count: infinite;
-    animation-duration: 4s;
-}
-@keyframes changeColor{
-    0%{
-        color: red;
-    }
-    100%{
-        color: green;
-    }
-}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .one {
+    grid-column: 1;
+    grid-row: 1 / 5;
+  }
+  .two {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+  }
+  .three {
+      
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
+  .four {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .five {
+    grid-column: 3;
+    grid-row: 3;
+  }
+  .six {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  .seven {
+    grid-column: 3;
+    grid-row: 4;
+  }
