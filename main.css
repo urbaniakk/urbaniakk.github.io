@@ -4,32 +4,71 @@
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
   }
-  .one {
+  .zdjecie {
     grid-column: 1;
-    grid-row: 1 / 5;
+    grid-row: 1 / 10;
   }
-  .two {
+  .naglowek {
     grid-column: 2 / 4;
     grid-row: 1 / 2;
   }
-  .three {
+  .podsumowanie {
       
     grid-column: 2 / 4;
     grid-row: 2 / 3;
   }
-  .four {
-    grid-column: 2;
-    grid-row: 3;
+  .doswiadczenie {
+      
+    grid-column: 2 / 4;
+    grid-row: 3 ;
   }
-  .five {
-    grid-column: 3;
-    grid-row: 3;
-  }
-  .six {
+  .d1 {
     grid-column: 2;
     grid-row: 4;
   }
-  .seven {
+  .d2 {
     grid-column: 3;
     grid-row: 4;
+  }
+  .d3 {
+    grid-column: 2;
+    grid-row: 5;
+  }
+  .d4 {
+    grid-column: 3;
+    grid-row: 5;
+  }
+  .wyksztalcenie {
+      
+    grid-column: 2 / 4;
+    grid-row: 6 ;
+  }
+  .w1 {
+    grid-column: 2;
+    grid-row: 7;
+  }
+  .w2 {
+    grid-column: 3;
+    grid-row: 7;
+  }
+  .w3 {
+    grid-column: 2;
+    grid-row: 8;
+  }
+  .w4 {
+    grid-column: 3;
+    grid-row: 8;
+  }
+  .umiejetnosci {
+      
+    grid-column: 2 / 4;
+    grid-row: 9;
+  }
+  .u1 {
+    grid-column: 2;
+    grid-row: 10;
+  }
+  .u2 {
+    grid-column: 3;
+    grid-row: 10;
   }
