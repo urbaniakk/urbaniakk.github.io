@@ -12,8 +12,8 @@
     width: auto;
     padding: 50px;
     margin: 0px;    
-    border-left-width: 5 px;
-    border-left-color: black inherit;
+    border-right-width: 5 px;
+    border-right-color: black inherit;
     grid-column: 1;
     grid-row: 1 / 11;
   }
