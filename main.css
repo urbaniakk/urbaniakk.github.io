@@ -5,70 +5,169 @@
     grid-auto-rows: minmax(100px, auto);
   }
   .zdjecie {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color:rgb(235, 229, 217);
+    width: auto;
+    padding: 50px;
+    margin: 0px;    
+    border-left-width: 5 px;
+    border-left-color: black inherit;
     grid-column: 1;
-    grid-row: 1 / 10;
+    grid-row: 1 / 11;
   }
-  .naglowek {
+  .naglowek 
+  {
+    font-size: 20px;    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:rgb(235, 229, 217);
+    width: auto;
+    border: 2px solid rgb(219, 190, 136);
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
+    text-size-adjust: 40 px;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
   }
   .podsumowanie {
-      
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 2 / 4;
     grid-row: 2 / 3;
   }
   .doswiadczenie {
-      
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;  
     grid-column: 2 / 4;
     grid-row: 3;
   }
   .d1 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 2;
     grid-row: 4;
   }
   .d2 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 3;
     grid-row: 4;
   }
   .d3 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 2;
     grid-row: 5;
   }
   .d4 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 3;
     grid-row: 5;
   }
   .wyksztalcenie {
-      
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 2 / 4;
     grid-row: 6 ;
   }
   .w1 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 2;
     grid-row: 7;
   }
   .w2 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 3;
     grid-row: 7;
   }
   .w3 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 2;
     grid-row: 8;
   }
   .w4 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 3;
     grid-row: 8;
   }
   .umiejetnosci {
-      
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 2 / 4;
     grid-row: 9;
   }
   .u1 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 2;
     grid-row: 10;
   }
   .u2 {
+    background-color:white;
+    width: auto;
+    border: 15px solid white;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
     grid-column: 3;
     grid-row: 10;
   }
