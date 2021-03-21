@@ -1,13 +1,11 @@
 body {
-    background: white;
     display: grid;
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+    background: white;
   }
 .wrapper {
-    text-decoration: none;
-    justify-content: space-between;
     display: flex;
+    margin: 0;
+    text-decoration: none;
     flex-direction: column;
     font-size: 14px;
     font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
@@ -23,9 +21,9 @@ body {
     padding: 4px 15px;
 }
 .gmail, .grafika, .kropki{
-    text-decoration: none;
     font-size: 13px;
     margin: 10px;
+    color: #222;
 }
 .button1{
     text-decoration: none;
@@ -43,42 +41,22 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 .drugi{
-    display: flex;
-    grid-row: auto;    
+    display: flex; 
     align-items: center;
     justify-content: center;
     align-content: flex-end;
-}
-.wpis{    
-    border-color: grey;
-    border-radius: 12px;
-    width: auto;
-}
-.button2, .button3{
-    text-decoration: none;
-    display: inline-block;
-    margin-left: 8px;
-    color: black;
-    background: #f8f8f8;
-    border: 1px solid transparent;
-    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: .25px;
-    line-height: 8px;
-    margin-right: 8px;
-    min-width: 80px;
-    padding: 13px 18px;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 4px;
-    box-sizing: border-box;
+    min-height: 150px;
+    max-height: 290px;
+    height: calc(100% - 560px);
 }
 .trzeci {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    grid-template-rows: 50% 50%;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    flex-direction: row;
     grid-row: auto;    
     align-items: center;
     justify-content: center;
@@ -86,11 +64,36 @@ body {
     text-decoration: none;
 }
 .wyszukiwanie{
+    outline-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     grid-row: auto;    
     align-items: center;
     justify-content: center;
+    align-content: center;
+}
+.wpis{    
+    border: none;
+    border-radius: 26px;
+    width: 450px;
+    height: 40px;
+}
+.button2, .button3{
+    text-decoration: none;
+    display: inline-block;
+    margin: 8px;
+    color: #222;
+    background: #f8f8f8;
+    border: 1px solid transparent;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+    min-width: 80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    box-sizing: border-box;
     align-content: center;
 }
 .czwarty {
