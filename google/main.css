@@ -1,83 +1,50 @@
 body {
     background: white;
-    margin: 0;
-  }
-.wrapper {
     display: grid;
     grid-gap: 10px;
-    padding: 2px;
     grid-auto-rows: minmax(100px, auto);
+  }
+.wrapper {
+    text-decoration: none;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     font-size: 14px;
-    font-family: arial,sans-serif;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     color: #222;
-    text-decoration: none;
 }
 .pierwszy {
-    border: 10px;
+    text-decoration: none;
     display: flex;
-    align-items: flex-end;
-    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-end;
     word-spacing: 30px;
-    flex-wrap: wrap;
-    text-decoration: none;
-    padding: 7px;
+    padding: 4px 15px;
 }
-.gmail, .grafika{
+.gmail, .grafika, .kropki{
     text-decoration: none;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: center;
-    align-content: center;
-    width: 10%;
+    font-size: 13px;
+    margin: 10px;
 }
 .button1{
     text-decoration: none;
     display: inline-block;
-    margin-left: 8px;
-    color: #fff;
+    color: white;
     background: #1a73e8;
     border: 1px solid transparent;
-    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-    font-weight: 500;
+    margin-left: 5px;
     font-size: 14px;
     letter-spacing: .25px;
     line-height: 8px;
-    margin-left: 20px;
-    margin-right: 7px;
-    margin-top: 2px;
     min-width: 80px;
     padding: 13px 24px;
     text-align: center;
-    vertical-align: middle;
     border-radius: 4px;
     box-sizing: border-box;
 }
-.button2, .button3{
-    display: inline-block;
-    margin-left: 8px;
-    color: white;
-    background: #e9eeee;
-    border: 1px solid transparent;
-    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: .25px;
-    line-height: 8px;
-    margin-right: 8px;
-    min-width: 80px;
-    padding: 6px 10px;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-.drugi {
+
+.drugi{
     display: flex;
     grid-row: auto;    
     align-items: center;
@@ -85,14 +52,53 @@ body {
     align-content: flex-end;
 }
 .wpis{    
+    border-color: grey;
+    border-radius: 12px;
+    width: auto;
+}
+.button2, .button3{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 8px;
+    color: black;
+    background: #f8f8f8;
+    border: 1px solid transparent;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+    line-height: 8px;
+    margin-right: 8px;
+    min-width: 80px;
+    padding: 13px 18px;
+    text-align: center;
+    vertical-align: middle;
     border-radius: 4px;
+    box-sizing: border-box;
 }
 .trzeci {
+    display: flex;
+    flex-direction: column;
     grid-row: auto;    
+    align-items: center;
+    justify-content: center;
+    align-content: flex-end;
+    text-decoration: none;
+}
+.wyszukiwanie{
+    display: flex;
+    flex-direction: column;
+    grid-row: auto;    
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 .czwarty {
     grid-row: auto;    
 }
 .piąty {
     grid-row: auto;    
+}
+.szósty{
+    grid-row: auto;
 }
