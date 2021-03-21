@@ -64,7 +64,6 @@ body {
     text-decoration: none;
 }
 .wyszukiwanie{
-    outline-style: none;
     display: flex;
     flex-direction: row;
     grid-row: auto;    
@@ -73,10 +72,16 @@ body {
     align-content: center;
 }
 .wpis{    
+    outline: none;
     border: none;
-    border-radius: 26px;
     width: 450px;
     height: 40px;
+}
+.przyciski{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
 }
 .button2, .button3{
     text-decoration: none;
@@ -95,6 +100,7 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
     align-content: center;
+    padding: 8px 16px;
 }
 .czwarty {
     grid-row: auto;    
