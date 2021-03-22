@@ -147,9 +147,13 @@ body {
     justify-content: space-between;
     padding: 0 20px;
 }
+img.leaf{
+    height: 14px;
+    margin-right: 3px;
+}
 .pasek1{
     order: 1;
-    width: 100%;
+    width: 30%;
     justify-content: center;
     text-align: left;
 }
@@ -162,8 +166,4 @@ body {
     order: 3;
     text-align: right;
     min-width: 30%;
-}
-img.leaf{
-    height: 14px;
-    margin-right: 3px;
 }
