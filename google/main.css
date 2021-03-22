@@ -18,7 +18,6 @@ body {
     align-items: center;
     justify-content: flex-end;
     word-spacing: 30px;
-    padding: 4px 15px;
 }
 .gmail, .grafika, .kropki{
     font-size: 13px;
@@ -76,6 +75,7 @@ body {
     border: none;
     width: 450px;
     height: 40px;
+    font-size: 20px;
 }
 .przyciski{
     display: flex;
@@ -102,12 +102,68 @@ body {
     align-content: center;
     padding: 8px 16px;
 }
-.czwarty {
-    grid-row: auto;    
+.czwarty, .eng{
+    display: flex;
+    grid-row: auto;      
+    font-size: 14px;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    justify-content: center;
+    align-content: center;
 }
-.piąty {
-    grid-row: auto;    
+.piąty{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #f2f2f2;
 }
-.szósty{
-    grid-row: auto;
+.kraj{
+    padding: 13px 30px;
+    border-bottom: 1px solid #dadce0;
+    font-size: 15px;
+    color: rgba(0,0,0,.54);
+}
+.text_charcoal{
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #70757a;
+    display: inline-block;
+    padding: 13px;
+    white-space: nowrap;
+}
+.text{
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #70757a;
+    display: inline-block;
+    padding: 13px;
+    padding-left: 0;
+    white-space: nowrap;
+}
+.linki{
+    justify-content: space-evenly;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.pasek1{
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    text-align: left;
+}
+.pasek2{
+    order: 2;
+    text-align: center;
+    min-width: 30%;
+}
+.pasek3{
+    order: 3;
+    text-align: right;
+    min-width: 30%;
+}
+img.leaf{
+    height: 14px;
+    margin-right: 3px;
 }
