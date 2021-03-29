@@ -1,5 +1,5 @@
 .results {
-    display: grid;    
+    display: grid;
     background: white;
     text-decoration: none;
   }
@@ -29,14 +29,31 @@
     height: 40px;
     font-size: 20px;
 }
-.results .pierwszy, .results .pierwszy_01{
-    grid-column: 2;
+.results .zerowy{
+    text-decoration: none;
+    display: grid;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    word-spacing: 30px;
+}
+.results .pierwszy{
+    padding-left: 150px;
     text-decoration: none;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     word-spacing: 30px;
+}
+.results .pierwszy_01{
+    padding-left: 180px;
+    grid-column: 2;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    word-spacing: 10px;
 }
 .results .gmail, .results .grafika{
     display: none;
@@ -142,4 +159,53 @@
     width: 30%;
     justify-content: center;
     text-align: left;
+}
+.results .tresc
+{
+    grid-column: 1;
+    grid-row: 4;
+    margin: 10px 180px 0 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.results .wynik
+{
+    margin-bottom: 30px;
+}
+
+.results .naglowek .hiperlacze
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.results .hiperlacze .skrot
+{
+    font-size: 14px;
+    line-height: 1.3;
+    color: #202124;
+}
+
+.results .hiperlacze .rodzaj
+{
+    color: #5f6368;
+    font-size: 14px;
+}
+
+.results .hiperlacze a
+{
+    font-size: 20px;
+    line-height: 1.3;
+    color: #1a0dab;
+    padding: 4px 0 4px 0;
+    width: fit-content;
+}
+
+.results .tresc .streszczenie .opis
+{
+    line-height: 1.58;
+    color: #4d5156;
+    text-align: left;
+    font-size: 14px;
 }
