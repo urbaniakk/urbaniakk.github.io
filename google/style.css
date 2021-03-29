@@ -160,50 +160,37 @@
     justify-content: center;
     text-align: left;
 }
-.results .tresc
-{
+.results .tresc{
     grid-column: 1;
     grid-row: 4;
     margin: 10px 180px 0 180px;
     display: flex;
     flex-direction: column;
 }
-
-.results .wynik
-{
+.results .wynik{
     margin-bottom: 30px;
 }
-
-.results .naglowek .hiperlacze
-{
+.results .naglowek .hiperlacze{
     display: flex;
     flex-direction: column;
 }
-
-.results .hiperlacze .skrot
-{
+.results .hiperlacze .skrot{
     font-size: 14px;
     line-height: 1.3;
     color: #202124;
 }
-
-.results .hiperlacze .rodzaj
-{
+.results .hiperlacze .rodzaj{
     color: #5f6368;
     font-size: 14px;
 }
-
-.results .hiperlacze a
-{
+.results .hiperlacze a{
     font-size: 20px;
     line-height: 1.3;
     color: #1a0dab;
     padding: 4px 0 4px 0;
     width: fit-content;
 }
-
-.results .tresc .streszczenie .opis
-{
+.results .tresc .streszczenie .opis{
     line-height: 1.58;
     color: #4d5156;
     text-align: left;
