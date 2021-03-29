@@ -49,7 +49,7 @@
     word-spacing: 30px;
 }
 .results .pierwszy_01{
-    padding-left: 180px;
+    padding-left: 150px;
     grid-column: 2;
     text-decoration: none;
     display: flex;
@@ -100,7 +100,7 @@
 .results .button2, .button3{
     display: none;
 }
-.results .czwarty, .eng{
+.results .czwarty, .results .eng{
     display: none;
 }
 .results .piąty{
