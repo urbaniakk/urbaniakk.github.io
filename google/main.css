@@ -177,6 +177,9 @@ img.leaf{
     justify-content: flex-start;
     word-spacing: 30px;
 }
+.pierwszy_01{
+    display: none;
+}
 .tresc{
     display: none;
 }
