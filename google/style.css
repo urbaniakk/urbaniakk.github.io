@@ -7,7 +7,6 @@
     display: flex;
     margin: 0;
     text-decoration: none;
-    flex-direction: column;
     font-size: 14px;
     font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     color: #222;
@@ -21,6 +20,9 @@
     justify-content: center;
     align-content: center;
 }
+.results .mini_logo, .results .wyszukiwanie_01{
+    display: inline-block;
+}
 .results .wpis_01{   
     justify-content: left;; 
     outline: none;
@@ -31,14 +33,14 @@
 }
 .results .zerowy{
     text-decoration: none;
-    display: grid;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     word-spacing: 30px;
 }
 .results .pierwszy{
-    padding-left: 150px;
+    padding-left: 510px;
     text-decoration: none;
     display: flex;
     flex-direction: row;
