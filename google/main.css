@@ -169,3 +169,23 @@ img.leaf{
     text-align: right;
     min-width: 30%;
 }
+.wyszukiwanie_01{
+    display: none;
+}
+.wpis_01{   
+    display: none;
+}
+.zerowy{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    word-spacing: 30px;
+}
+.pierwszy_01{
+    display: none;
+}
+.tresc, .streszczenie, .opis, .rodzaj, .hiperlacze a, .skrot, .naglowek, .wynik, .pasek4, .linki2, .mini_logo{
+    display: none;
+}
