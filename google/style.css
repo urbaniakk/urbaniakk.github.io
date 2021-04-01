@@ -11,7 +11,7 @@
     font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     color: #222;
 }
-.results .wyszukiwanie_01{
+.results .wyszukiwanie_01, .results .mini_logo{
     justify-content: left;
     display: flex;
     flex-direction: row;
@@ -19,9 +19,6 @@
     align-items: center;
     justify-content: center;
     align-content: center;
-}
-.results .mini_logo, .results .wyszukiwanie_01{
-    display: inline-block;
 }
 .results .wpis_01{   
     justify-content: left;; 
@@ -40,7 +37,7 @@
     word-spacing: 30px;
 }
 .results .pierwszy{
-    padding-left: 510px;
+    padding-left: 37%;
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -49,7 +46,7 @@
     word-spacing: 30px;
 }
 .results .pierwszy_01{
-    padding-left: 150px;
+    padding-left: 180px;
     grid-column: 2;
     text-decoration: none;
     display: flex;
@@ -59,6 +56,12 @@
 }
 .results .gmail, .results .grafika{
     display: none;
+}
+.results .linia{
+    width:100%;
+    text-align:left;
+    margin-left:0;
+    color: lightgrey;
 }
 .results .kropki{    
     font-size: 13px;
@@ -97,7 +100,7 @@
 .results .przyciski{
     display: none;
 }
-.results .button2, .button3{
+.results .button2, .results .button3{
     display: none;
 }
 .results .czwarty, .results .eng{
@@ -145,6 +148,9 @@
     display: none;
 }
 .results .pasek3{
+    display: none;
+}
+.results .but2 .but3 .but{
     display: none;
 }
 .results .linki2{    

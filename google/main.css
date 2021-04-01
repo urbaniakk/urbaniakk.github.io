@@ -1,9 +1,24 @@
 body {
     display: grid;
     background: white;
-  }
+}
+.but {
+    text-decoration: none;
+    color: white;
+    padding: none;
+    margin: none;
+    background: none;
+    border: none;
+}
+.but2, .but3 {
+    text-decoration: none;
+    color: grey;
+    padding: none;
+    margin: none;
+    background: none;
+    border: none;
+}
 .wrapper {
-    display: flex;
     margin: 0;
     text-decoration: none;
     flex-direction: column;
@@ -18,11 +33,17 @@ body {
     align-items: center;
     justify-content: flex-end;
     word-spacing: 30px;
+    float: right;
 }
 .gmail, .grafika, .kropki{
     font-size: 13px;
     margin: 10px;
     color: #222;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.mini_logo{
+    display: none;
 }
 .button1{
     text-decoration: none;
@@ -39,6 +60,7 @@ body {
     text-align: center;
     border-radius: 4px;
     box-sizing: border-box;
+    justify-content: flex-end;
 }
 .drugi{
     display: flex; 
@@ -49,7 +71,7 @@ body {
     max-height: 290px;
     height: calc(100% - 560px);
 }
-.trzeci {
+.trzeci{
     display: block;
     grid-template-rows: 50% 50%;
     position: relative;
@@ -109,8 +131,10 @@ body {
     font-size: 14px;
     font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     justify-content: center;
-    align-content: center;
-    
+    align-content: center; 
+}
+.linia{
+    display: none;
 }
 .piąty{
     display: flex;
@@ -153,11 +177,17 @@ img.leaf{
     height: 14px;
     margin-right: 3px;
 }
+.linki2{
+    display: none;
+}
 .pasek1{
     order: 1;
     width: 30%;
     justify-content: center;
     text-align: left;
+}
+.wyszukiwanie_01{
+    display: none;
 }
 .pasek2{
     order: 2;
@@ -171,7 +201,6 @@ img.leaf{
 }
 .zerowy{
     text-decoration: none;
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
