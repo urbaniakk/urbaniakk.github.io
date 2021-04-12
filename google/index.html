@@ -8,10 +8,10 @@
         <link rel="icon" href="google.png">
         <title>Strona Google</title>
         <script src="vue.js" defer></script>
-        <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
         <meta charset="UTF-8">
     </head>
-    <body class="results">
+    <body>
         <div class="wrapper">
             <div class="zerowy">
                 <div class="mini_logo">
@@ -230,8 +230,7 @@
             <div class="trzeci"><br><br><br>
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier.png">
-                    <div id="app" :class="{ results: googleSearch.length > 0 }">
-                        {{ googleSearch }}
+                    <div id="app">
                         <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj"/>
                     </div>
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
