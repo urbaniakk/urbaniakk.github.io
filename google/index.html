@@ -7,12 +7,11 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap">    
         <link rel="icon" href="google.png">
         <title>Strona Google</title>
-        <script src="vue.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper" id="app">
             <div class="zerowy">
                 <div class="mini_logo">
                     <image src="mini_logo.png" alt="Google" width="178" height="73">
@@ -74,7 +73,7 @@
                                     <span class="rodzaj"> › watch</span>
                                 </cite>
                             </div>
-                            <a class="tytul" href="https://www.youtube.com/watch?v=mYFaghHyMKc">I'm yours, can't you see?</a>
+                            <a class="tytul" href="https://www.youtube.com/watch?v=mYFaghHyMKc">Can't you see?</a>
                         </div>
                     </div>
     
@@ -230,9 +229,9 @@
             <div class="trzeci"><br><br><br>
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier.png">
-                    <div id="app">
-                        <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj"/>
-                    </div>
+                    
+                    <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj"/>
+                    {{ googleSearch }}
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
                 </div>
                 <div class="przyciski">
@@ -272,6 +271,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
+        <script src="vue.js" defer></script>
     </body> 
 </html>
