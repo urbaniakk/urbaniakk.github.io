@@ -80,7 +80,7 @@ body {
 }
 .logo{
     justify-content: flex-end;
-    float: right;
+    padding-left: 300px;
 }
 .trzeci{
     display: block;
