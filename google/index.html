@@ -11,14 +11,14 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="wrapper" id="app">
+        <div class="wrapper" id="app" :class="{results: googleSearch.length > 0}">
             <div class="zerowy">
                 <div class="mini_logo">
                     <image src="mini_logo.png" alt="Google" width="178" height="73">
                 </div>
                 <div class="wyszukiwanie_01">
                     <img class="lupa_01" src="magnifier.png">
-                    <input class="wpis_01" type="search" minlenght="2000" maxlength="2048" title="Szukaj">
+                    <input class="wpis_01" v-model="googleSearch" type="search" minlenght="2000" maxlength="2048" title="Szukaj" ref="second">
                     <img class="klaw_mik_01" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
                 </div>
                 <div class="pierwszy">
@@ -218,8 +218,6 @@
                         </span>
                     </div>
                 </div>
-    
-            </div>
             </div>
             <div class="drugi">
                 <div class="logo">
@@ -230,7 +228,7 @@
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier.png">
                     
-                    <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj"/>
+                    <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" ref="first"/>
                     {{ googleSearch }}
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
                 </div>
