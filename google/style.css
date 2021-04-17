@@ -1,5 +1,4 @@
 .results {
-    display: grid;
     background: white;
     text-decoration: none;
   }
@@ -166,6 +165,7 @@
     width: 30%;
     justify-content: center;
     text-align: left;
+    flex-direction: row;
 }
 .results .tresc{
     grid-column: 1;

@@ -1,5 +1,5 @@
 body {
-    display: grid;
+    display: block;
     background: white;
 }
 .but {
@@ -25,6 +25,13 @@ body {
     font-size: 14px;
     font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     color: #222;
+}
+.zerowy{
+    text-decoration: none;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    word-spacing: 30px;
 }
 .pierwszy {
     text-decoration: none;
@@ -70,6 +77,10 @@ body {
     min-height: 150px;
     max-height: 290px;
     height: calc(100% - 560px);
+}
+.logo{
+    justify-content: flex-end;
+    float: right;
 }
 .trzeci{
     display: block;
@@ -198,13 +209,6 @@ img.leaf{
     order: 3;
     text-align: right;
     min-width: 30%;
-}
-.zerowy{
-    text-decoration: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    word-spacing: 30px;
 }
 .pierwszy_01{
     display: none;
