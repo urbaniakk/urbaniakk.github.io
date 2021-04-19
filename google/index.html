@@ -41,6 +41,11 @@
                 </div>
             </div>
             <hr class="linia">
+            <div class="cities">
+                <ul v-for="city in filteredCities">
+                    {{ city.name }}
+                </ul>
+            </div>
             <div class="tresc">
                 <div class="wynik">
                     <div class="naglowek">
@@ -270,6 +275,7 @@
                 </div>
             </div>
         </div>        
+        <script src="cities.js" defer></script>
         <script src="vue.js" defer></script>
     </body> 
 </html>

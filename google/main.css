@@ -42,6 +42,9 @@ body {
     word-spacing: 30px;
     float: right;
 }
+.cities{
+    display: none;
+}
 .gmail, .grafika, .kropki{
     font-size: 13px;
     margin: 10px;

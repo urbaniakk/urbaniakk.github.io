@@ -53,6 +53,10 @@
     align-items: flex-start;
     word-spacing: 10px;
 }
+.results .cities{
+    font-family: Google Sans,arial,sans-serif;
+    display: inline-block;
+}
 .results .gmail, .results .grafika{
     display: none;
 }
