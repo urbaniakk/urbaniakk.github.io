@@ -2,7 +2,9 @@ var app = new Vue({
     el: "#app",
     data: {
         googleSearch: "",
-        cities: window.cities
+        cities: window.cities,
+        isActive: 0,
+        control: 0
     },
     updated() {
         this.$nextTick(() => {
@@ -21,5 +23,33 @@ var app = new Vue({
             }
             return m
             }
+        },
+
+    methods:{
+        zmiana: function(a)
+        {
+            if(this.isActive == 0)
+            {
+                this.isActive = 1;
+                this.googleSearch = a;
+                el2 = document.getElementById("autocom");
+                el2.blur();
+                this.control = 0;
+            }
+        },
+        pogrubienie: function(a)
+        {
+            wyszukaj = this.googleSearch;
+            var pom = a.split(wyszukaj);
+            for(i = 0; i < pom.length; i++)
+            {
+                a = a.replace(pom[i], pom[i].bold());
+            }
+            return a;
+        },
+        ustaw: function()
+        {
+            this.control = 1;
         }
+    }
 });

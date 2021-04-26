@@ -207,3 +207,47 @@
     text-align: left;
     font-size: 14px;
 }
+.results .auto{
+    text-align: left;
+    position: absolute;
+    margin-top: 35px;
+    margin-left: -4px;
+    width: 690px;
+}
+.results .autocompleter{
+    background: rgb(248, 246, 246);
+    box-shadow: 0 4px 6px rgba(32,33,36,.28);
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    border-radius: 0 0 24px 24px;
+    padding-bottom: 4px;
+    margin: 0;
+    padding: 0;
+}
+.results .wyniki{
+    display:flex;
+    flex-direction: column;
+    font-size: 16px;
+    color: #212121;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+}
+.results .kazdy{
+    display: inline-block;
+}
+.results .lupaaa{
+    align-items: center;
+    margin: 0 13px 0 1px;
+    height: 20px;
+    width: 20px;
+}
+.results .bez{
+    display: none;
+}
+.results .pojedynczy{
+    font-family: arial,sans-serif;
+    padding: 6px 0 6px 11px;
+}

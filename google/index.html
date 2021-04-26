@@ -11,14 +11,14 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="wrapper" id="app" :class="{results: googleSearch.length > 0}">
+        <div class="wrapper" id="app" :class="[googleSearch.length != 0 && isActive == 1 ? 'results' : isActive = 0 ]">
             <div class="zerowy">
                 <div class="mini_logo">
                     <image src="mini_logo.png" alt="Google" width="178" height="73">
                 </div>
                 <div class="wyszukiwanie_01">
                     <img class="lupa_01" src="magnifier.png">
-                    <input class="wpis_01" v-model="googleSearch" type="search" minlenght="2000" maxlength="2048" title="Szukaj" ref="second">
+                    <input class="wpis_01" v-model="googleSearch" type="search" minlenght="2000" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="second">
                     <img class="klaw_mik_01" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
                 </div>
                 <div class="pierwszy">
@@ -233,9 +233,21 @@
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier.png">
                     
-                    <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" ref="first"/>
-                    {{ googleSearch }}
+                    <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first"/>
+                    <!--{{ googleSearch }}-->
+                    
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
+                    <div class="auto">
+                        <div id="autocomplete" :class="[ googleSearch.length != 0 && filteredCities.length != 0 ? 'autocompleter' : 'bez']">
+                            <ul class="wyniki">
+                                <li class="pojedynczy" v-for="city in filteredCities" v-on:click="zmiana(city.name)">
+                                    <img class="lupaaa" src="magnifier_2.png">
+                                    <div class="kazdy" v-html="pogrubienie(city.name)">
+                                    </div>  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="przyciski">
                     <button class="button2"><a class="but2" href="https://www.youtube.com/watch?v=2-AmAO_lXGo">Szukaj w Google</a></button>
