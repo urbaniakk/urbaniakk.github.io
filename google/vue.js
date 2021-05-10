@@ -90,7 +90,7 @@ var app = new Vue({
         down: function(){
             if(this.inFocus < this.filteredCities.length-1)
             {
-                this.inFocus += 1; 
+                this.inFocus++; 
             }
             if(this.inFocus == this.filteredCities.length-1)
             {
@@ -100,7 +100,7 @@ var app = new Vue({
         up: function(){
             if(this.inFocus > 0)
             {
-                this.inFocus -= 1; 
+                this.inFocus--; 
             }
             if(this.inFocus == 0)
             {
