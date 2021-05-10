@@ -233,12 +233,12 @@
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier.png">
                     
-                    <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first"/>
+                    <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first" @focus="focused = true" @keyup.down="down()" @keyup.up="up()" @keyup.enter="enter()"/>
                     <!--{{ googleSearch }}-->
-                    
+
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
                     <div class="auto">
-                        <div id="autocomplete" :class="[ googleSearch.length != 0 && filteredCities.length != 0 ? 'autocompleter' : 'bez']">
+                        <div id="autocomplete" :class="[ googleSearch.length != 0 && focused && filteredCities.length != 0 ? 'autocompleter' : 'bez']">
                             <ul class="wyniki">
                                 <li class="pojedynczy" v-for="city in filteredCities" v-on:click="zmiana(city.name)">
                                     <img class="lupaaa" src="magnifier_2.png">
