@@ -2,6 +2,8 @@
 <html itemscope="" itemtype="http://schema.org/WebPage" lang="pl">
     <head>
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="autocompleter.css">
+        <link rel="stylesheet" href="autocompleter.js">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap">    
@@ -233,8 +235,9 @@
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier.png">
                     
-                    <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first" @focus="focused = true" @keyup.down="down()" @keyup.up="up()" @keyup.enter="enter()"/>
+                    <!--<input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first" @focus="focused = true" @keyup.down="down()" @keyup.up="up()" @keyup.enter="enter()"/>-->
                     <!--{{ googleSearch }}-->
+                    <v-autocompleter :options="cities" @click="handleClick(city.name)" @wybierz="eventHandler($googleSearch)"></v-autocompleter>
 
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
                     <div class="auto">
