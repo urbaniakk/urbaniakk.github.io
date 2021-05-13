@@ -1,26 +1,44 @@
-Vue.component('v-autocompleter', {
-    data: function () {
-        return {
-            googleSearch: '',
-            isActive: 0,
-            cities: window.cities,
-            filteredCities:"",
-            inFocus: -1,
+Vue.component("v-autocompleter", {
+
+    template: ' <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first" @focus="focused = true" @keyup.down="down()" @keyup.up="up()" @keyup.enter="enter()"/><div class="auto"><div id="autocomplete" :class="[ googleSearch.length != 0 && focused && filteredCities.length != 0 ? \'autocompleter\' : \'bez\']"><ul class="wyniki"><li class="pojedynczy" v-for="city in filteredCities" v-on:click="zmiana(city.name)"><img class="lupaaa" src="magnifier_2.png"><div class="kazdy" v-html="pogrubienie(city.name)"></div></li></ul></div></div>',
+    props: ['options'],
+
+    data: function()
+    {
+      return
+      {
+        googleSearch: ''
+        control: 0
+      }
+    },
+
+    computed: 
+    {
+        filteredCities: function () 
+        {
+            if (this.googleSearch.length == 0) 
+            {
+                return
+            }
+
+            let result = this.cities.filter(city => city.name.includes(this.googleSearch))
+            if (result.length > 10) 
+            {
+                result = result.slice(0, 10)
+            }
+            return result
         }
     },
-    methods: {
-        zmiana: function(a)
+
+    methods: 
+    {
+        handleClick: function (a) 
         {
-            if(this.isActive == 0)
-            {
-                this.isActive = 1;
-                this.googleSearch = a;
-                el2 = document.getElementById("autocom");
-                el2.blur();
-                this.control = 0;
-            }
+            this.googleSearch = a;
+            this.isActive = 1;
+            this.$emit('enter', this.googleSearch)
         },
-        pogrubienie: function(a)
+        highlight: function (a) 
         {
             wyszukaj = this.googleSearch;
             var pom = a.split(wyszukaj);
@@ -29,25 +47,14 @@ Vue.component('v-autocompleter', {
                 a = a.replace(pom[i], pom[i].bold());
             }
             return a;
+            return a.replaceAll(this.googleSearch, '<span class="highlight">' + this.googleSearch + '</span>')
+        },
+        zmien: function () {
+            this.$emit('enter', this.googleSearch)
+        },
+        signalChange: function () 
+        {
+            this.$emit('input')
         },
     },
-    
-    computed: {
-        createFilteredCities: function(yes){
-            if(yes)
-            {
-                let result = this.cities.filter(city => city.name.includes(this.googleSearch));
-                if(result.length > 10)
-                {
-                    this.filteredCities = result.slice(1, 11);
-                }
-                else
-                {
-                    this.filteredCities = result;
-                }
-                this.inFocus = -1;
-            }   
-        }
-
-      },
-})
+});
