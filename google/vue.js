@@ -15,49 +15,30 @@ var app = new Vue({
     },
     updated() {
         this.$nextTick(() => {
-        if (this.googleSearch.length > 0) 
-        {        
-            this.$refs.second.focus();
-        } 
-        else
-        {
-            this.$refs.first.focus();
-        }
+            if (this.googleSearch.length > 0) {        
+                this.$refs.second.focus();
+            } else {
+                this.$refs.first.focus();
+            }
         });
     },
-    /*computed: {
-        filteredCities: function() {
-            let m = this.cities.filter(city => city.name.includes(this.googleSearch))
-            if(m.length > 10)
-            {
-                return m.slice(0,11);
-            }
-            return m
-        }
-    },*/
-
     watch:{
-        inFocus: function () 
-        {
+        inFocus: function() {
             this.update_filteredCities = false;
             this.googleSearch=this.filteredCities[this.inFocus].name;
         },
-        googleSearch: function()
-        {
+        googleSearch: function() {
             this.createFilteredCities(this.update_filteredCities);
             this.update_filteredCities=true;
             console.log(this.filteredCities);
 
-            if(this.inFocus == -1)
-            {
+            if(this.inFocus == -1) {
                 this.searchedInput=this.googleSearch;
             }
         }
     },
-
     methods:{
-        zmiana: function(a)
-        {
+        zmiana: function(a){
             if(this.isActive == 0)
             {
                 this.isActive = 1;
@@ -88,22 +69,16 @@ var app = new Vue({
             this.focused = false;
         },
         down: function(){
-            if(this.inFocus < this.filteredCities.length-1)
-            {
+            if(this.inFocus < this.filteredCities.length - 1) {
                 this.inFocus++; 
-            }
-            if(this.inFocus == this.filteredCities.length-1)
-            {
+            } else if(this.inFocus == this.filteredCities.length-1)  {
                 this.inFocus = 0; 
             }
         },
         up: function(){
-            if(this.inFocus > 0)
-            {
+            if(this.inFocus > 0) {
                 this.inFocus--; 
-            }
-            if(this.inFocus == 0)
-            {
+            } else if(this.inFocus == 0) {
                 this.inFocus = this.filteredCities.length-1;
             }
         },

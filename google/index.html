@@ -2,8 +2,6 @@
 <html itemscope="" itemtype="http://schema.org/WebPage" lang="pl">
     <head>
         <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="autocompleter.css">
-        <link rel="stylesheet" href="autocompleter.js">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap">    
@@ -231,22 +229,38 @@
                     <image src="logo.png" alt="Google" width="276" height="226">
                 </div>
             </div>
-            <div class="trzeci"><br><br><br>
+            <div class="trzeci">
+                <!-- <div>isActive: {{ isActive }}</div>
+                <div>inFocus : {{ inFocus }}</div>
+                <div>googleSearch: {{ googleSearch }}</div> -->
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier.png">
                     
-                    <!--<input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first" @focus="focused = true" @keyup.down="down()" @keyup.up="up()" @keyup.enter="enter()"/>-->
-                    <!--{{ googleSearch }}-->
-                    <v-autocompleter :options="cities" @click="handleClick(city.name)" @wybierz="eventHandler($googleSearch)"></v-autocompleter>
+                    <input 
+                        class="wpis"
+                        v-model="googleSearch"
+                        type="search"
+                        minlength="2048"
+                        maxlength="2048"
+                        title="Szukaj"
+                        v-on:click="ustaw()"
+                        ref="first"
+                        @focus="focused=true"
+                        @keyup.down="down()"
+                        @keyup.up="up()"
+                        @keyup.enter="enter()"/>
 
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
                     <div class="auto">
                         <div id="autocomplete" :class="[ googleSearch.length != 0 && focused && filteredCities.length != 0 ? 'autocompleter' : 'bez']">
                             <ul class="wyniki">
-                                <li class="pojedynczy" v-for="city in filteredCities" v-on:click="zmiana(city.name)">
+                                <li class="pojedynczy"
+                                    :class="{active: inFocus === index}"
+                                    v-for="(city, index) in filteredCities"
+                                    v-on:click="zmiana(city.name)">
+
                                     <img class="lupaaa" src="magnifier_2.png">
-                                    <div class="kazdy" v-html="pogrubienie(city.name)">
-                                    </div>  
+                                    <div class="kazdy" v-html="pogrubienie(city.name)"></div>  
                                 </li>
                             </ul>
                         </div>
