@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="autocompleter.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap">    
         <link rel="icon" href="google.png">
@@ -11,7 +12,7 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="wrapper" id="app" :class="[googleSearch.length != 0 && isActive == 1 ? 'results' : isActive = 0 ]">
+        <div class="wrapper" id="app" :class="[isInResults ? 'results' : '']">
             <div class="zerowy">
                 <div class="mini_logo">
                     <image src="mini_logo.png" alt="Google" width="178" height="73">
@@ -42,9 +43,8 @@
             </div>
             <hr class="linia">
             <div class="cities">
-                <ul v-for="city in filteredCities">
-                    <!--{{ city.name }}-->
-                </ul>
+                <!-- <ul v-for="city in filteredCities">
+                </ul> -->
             </div>
             <div class="tresc">
                 <div class="wynik">
@@ -230,41 +230,12 @@
                 </div>
             </div>
             <div class="trzeci">
-                <!-- <div>isActive: {{ isActive }}</div>
-                <div>inFocus : {{ inFocus }}</div>
-                <div>googleSearch: {{ googleSearch }}</div> -->
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier.png">
                     
-                    <input 
-                        class="wpis"
-                        v-model="googleSearch"
-                        type="search"
-                        minlength="2048"
-                        maxlength="2048"
-                        title="Szukaj"
-                        v-on:click="ustaw()"
-                        ref="first"
-                        @focus="focused=true"
-                        @keyup.down="down()"
-                        @keyup.up="up()"
-                        @keyup.enter="enter()"/>
+                    <v-autocompleter v-model="googleSearch" @enter="autocompleterSubmit" :options="cities"></v-autocompleter>
 
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
-                    <div class="auto">
-                        <div id="autocomplete" :class="[ googleSearch.length != 0 && focused && filteredCities.length != 0 ? 'autocompleter' : 'bez']">
-                            <ul class="wyniki">
-                                <li class="pojedynczy"
-                                    :class="{active: inFocus === index}"
-                                    v-for="(city, index) in filteredCities"
-                                    v-on:click="zmiana(city.name)">
-
-                                    <img class="lupaaa" src="magnifier_2.png">
-                                    <div class="kazdy" v-html="pogrubienie(city.name)"></div>  
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
                 <div class="przyciski">
                     <button class="button2"><a class="but2" href="https://www.youtube.com/watch?v=2-AmAO_lXGo">Szukaj w Google</a></button>
@@ -305,6 +276,7 @@
             </div>
         </div>        
         <script src="cities.js" defer></script>
+        <script src="autocompleter.js" defer></script>
         <script src="vue.js" defer></script>
     </body> 
 </html>
