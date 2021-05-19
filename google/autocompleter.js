@@ -1,6 +1,6 @@
 Vue.component("v-autocompleter", {
 
-    template: ' <input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first" @focus="focused = true" @keyup.down="down()" @keyup.up="up()" @keyup.enter="enter()"/><div class="auto"><div id="autocomplete" :class="[ googleSearch.length != 0 && focused && filteredCities.length != 0 ? \'autocompleter\' : \'bez\']"><ul class="wyniki"><li class="pojedynczy" v-for="city in filteredCities" v-on:click="zmiana(city.name)"><img class="lupaaa" src="magnifier_2.png"><div class="kazdy" v-html="pogrubienie(city.name)"></div></li></ul></div></div>',
+    template: '<div class="wyszukiwanie"><img class="lupa" src="magnifier.png"><input class="wpis" v-model="googleSearch" type="search" minlength="2048" maxlength="2048" title="Szukaj" v-on:click="ustaw()" ref="first" @focus="focused = true" @keyup.down="down()" @keyup.up="up()" @keyup.enter="enter()"/><img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br><div class="auto"><div id="autocomplete" :class="[ googleSearch.length != 0 && focused && filteredCities.length != 0 ? \'autocompleter\' : \'bez\']"><ul class="wyniki"><li class="pojedynczy" v-for="city in filteredCities" v-on:click="zmiana(city.name)"><img class="lupaaa" src="magnifier_2.png"><div class="kazdy" v-html="pogrubienie(city.name)"></div></li></ul></div></div></div>',   
     props: ['options'],
 
     data: function()
