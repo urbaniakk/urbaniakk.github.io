@@ -1,3 +1,6 @@
+.v-autocompleter {
+    position: relative;
+}
 .auto{
     width: 40%;
     text-align: left;
@@ -43,3 +46,6 @@
     padding: 6px 0 6px 11px;
 }
 
+.pojedynczy:hover, .pojedynczy.active {
+    background: #e4e4e4;
+}
