@@ -39,7 +39,13 @@ Vue.component("v-autocompleter", {
     </div>`,
     
     props: [
+        /**
+         * options to wartość wskazująca na listę miast
+         */
         'options',
+        /**
+         * value to wartość wskazująca wpis z inputa
+         */
         'value'
     ],
 
@@ -57,6 +63,9 @@ Vue.component("v-autocompleter", {
             searchedInput:''
         }
     },
+    /**
+     * funkcja updated() aktywuje bieżący element - ustawia focus
+     */
     updated() {
         this.$nextTick(() => {
             if (this.value.length > 0) {        
@@ -65,6 +74,10 @@ Vue.component("v-autocompleter", {
         });
     },
     watch:{
+        /**
+         * funkcja inFocus() wskazuje na obecnie wybraną wartość listy miast
+         * i wpisuje ją do inputa
+         */
         inFocus: function(newValue) {
             if (newValue < 0) {
                 return;
@@ -73,6 +86,9 @@ Vue.component("v-autocompleter", {
 
             this.$emit('input', this.filteredCities[this.inFocus].name);
         },
+        /**
+         * funkcja value() ustawia wartość wyszukiwania z inputa na określoną wartość
+         */
         value: function() {
             this.createFilteredCities(this.update_filteredCities);
             this.update_filteredCities = true;
@@ -85,6 +101,10 @@ Vue.component("v-autocompleter", {
         }
     },
     methods:{
+        /**
+         * funkcja zmiana() zmienia element, który został wpisany do inputa
+         * na ten, który został wybrany
+         */
         zmiana: function(a){
             if(this.isActive == 0) {
                 this.isActive = 1;
@@ -94,6 +114,11 @@ Vue.component("v-autocompleter", {
                 this.control = 0;
             }
         },
+        /**
+         * funkcja zapisuje pogrubioną część wyszukiwania, 
+         * która nie została wpisana w inputa,
+         * a część wpisaną wypisuje stylem normalnym
+         */
         pogrubienie: function(a)
         {
             wyszukaj = this.value;
@@ -104,9 +129,15 @@ Vue.component("v-autocompleter", {
             }
             return a;
         },
+        /**
+         * funkcja ustaw() ustawia wybraną wartość
+         */
         ustaw: function() {
             this.control = 1;
         },
+        /**
+         * funkcja enter() służy wybraniu miasta z listy za pomocą entera
+         */
         enter: function() {
             this.update_filteredCities = true;
             this.change = true;
@@ -114,6 +145,11 @@ Vue.component("v-autocompleter", {
             this.inFocus = -1;
             this.$emit('enter', this.value);
         },
+        /**
+         * funkcja down() obsługuje strzałkę w dół -
+         * jej wywołanie skutkuje przesunięciem po liście
+         * odpowiednio w dół po elementach oraz z ostatniego na pierwszy
+         */
         down: function(){
             if(this.inFocus < this.filteredCities.length - 1) {
                 this.inFocus++; 
@@ -121,6 +157,11 @@ Vue.component("v-autocompleter", {
                 this.inFocus = 0; 
             }
         },
+        /**
+         * funkcja up() obsługuje strzałkę w górę -
+         * jej wywołanie skutkuje przesunięciem po liście
+         * odpowiednio w górę po elementach oraz z pierwszego na ostatni
+         */
         up: function(){
             if(this.inFocus > 0) {
                 this.inFocus--; 
@@ -128,6 +169,10 @@ Vue.component("v-autocompleter", {
                 this.inFocus = this.filteredCities.length-1;
             }
         },
+        /**
+         * funkcja createFilteredCities() tworzy listę miast zawierających wpisaną
+         * w input frazę
+         */
         createFilteredCities: function(yes){
             if(yes) {
                 let result = this.cities.filter(city => city.name.includes(this.value));
