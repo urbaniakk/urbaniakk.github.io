@@ -9,6 +9,8 @@
         <link rel="icon" href="google.png">
         <title>Strona Google</title>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js" integrity="sha512-JZSo0h5TONFYmyLMqp8k4oPhuo6yNk9mHM+FY50aBjpypfofqtEWsAgRDQm94ImLCzSaHeqNvYuD9382CEn2zw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!--<script src="https://cdnjs.com/libraries/jquery-throttle-debounce"></script>-->
         <meta charset="UTF-8">
     </head>
     <body>
@@ -275,7 +277,7 @@
                 </div>
             </div>
         </div>        
-        <script src="cities.js" defer></script>
+        <!--<script src="cities.js" defer></script>-->
         <script src="autocompleter.js" defer></script>
         <script src="vue.js" defer></script>
     </body> 

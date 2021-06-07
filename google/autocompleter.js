@@ -9,7 +9,7 @@ Vue.component("v-autocompleter", {
         <input
         class="wpis"
         :value="value"
-        @input="$emit('input', $event.target.value)"
+        @input="findResultsDebounced"
         type="search"
         minlength="2048"
         maxlength="2048"
@@ -19,11 +19,11 @@ Vue.component("v-autocompleter", {
         @focus="focused=true"
         @keyup.down="down()"
         @keyup.up="up()"
-        @keyup.enter="enter()"/>
+        @keyup.enter="$emit('enter', googleSearch)"
         
         <div class="auto">
             <div id="autocomplete"
-                :class="[ value.length !== 0 && focused && filteredCities.length !== 0 ? \'autocompleter\' : \'bez\']">
+                :class="[ googleSearch.length !== 0 && focused && filteredCities.length !== 0 ? \'autocompleter\' : \'bez\']">
                 <ul class="wyniki">
                     <li
                         class="pojedynczy"
@@ -96,11 +96,20 @@ Vue.component("v-autocompleter", {
             console.log(this.filteredCities);
 
             if(this.inFocus == -1) {
-                this.searchedInput = this.value;
+                this.searchedInput = this.googleSearch;
             }
         }
     },
     methods:{
+        findResultsDebounced : Cowboy.debounce(100, function findResultsDebounced() {
+            console.log('Fetch: ', this.googleSearch)
+            fetch(`http://localhost:8080/apietryka886.github.io/google/search.php?name=` + this.googleSearch)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Data: ', data);
+                    this.filteredCities = data;
+                });
+        }),
         /**
          * funkcja zmiana() zmienia element, który został wpisany do inputa
          * na ten, który został wybrany
@@ -121,7 +130,7 @@ Vue.component("v-autocompleter", {
          */
         pogrubienie: function(a)
         {
-            wyszukaj = this.value;
+            wyszukaj = this.googleSearch;
             var pom = a.split(wyszukaj);
             for(i = 0; i < pom.length; i++)
             {
@@ -138,12 +147,12 @@ Vue.component("v-autocompleter", {
         /**
          * funkcja enter() służy wybraniu miasta z listy za pomocą entera
          */
-        enter: function() {
+        enter: function(){
             this.update_filteredCities = true;
             this.change = true;
             this.focused = false;
             this.inFocus = -1;
-            this.$emit('enter', this.value);
+            this.$emit('enter', this.googleSearch);
         },
         /**
          * funkcja down() obsługuje strzałkę w dół -
@@ -151,9 +160,10 @@ Vue.component("v-autocompleter", {
          * odpowiednio w dół po elementach oraz z ostatniego na pierwszy
          */
         down: function(){
-            if(this.inFocus < this.filteredCities.length - 1) {
+            if(this.inFocus < this.filteredCities.length - 1){
                 this.inFocus++; 
-            } else if(this.inFocus == this.filteredCities.length-1)  {
+            } 
+            else if(this.inFocus == this.filteredCities.length-1){
                 this.inFocus = 0; 
             }
         },
@@ -165,7 +175,8 @@ Vue.component("v-autocompleter", {
         up: function(){
             if(this.inFocus > 0) {
                 this.inFocus--; 
-            } else if(this.inFocus == 0) {
+            } 
+            else if(this.inFocus == 0){
                 this.inFocus = this.filteredCities.length-1;
             }
         },
@@ -174,11 +185,13 @@ Vue.component("v-autocompleter", {
          * w input frazę
          */
         createFilteredCities: function(yes){
-            if(yes) {
+            if(yes){
                 let result = this.cities.filter(city => city.name.includes(this.value));
+                console.log("Cities: ", this.cities);   
+                console.log("Result: ", result)
                 if(result.length > 10)
                 {
-                    this.filteredCities = result.slice(1, 11);
+                    this.filteredCities = result.slice(0, 10);
                 }
                 else
                 {
