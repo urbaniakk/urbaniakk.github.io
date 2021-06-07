@@ -235,7 +235,15 @@
                 <div class="wyszukiwanie">
                     <img class="lupa" src="magnifier_2.png">
                     
-                    <v-autocompleter v-model="googleSearch" @enter="autocompleterSubmit" :options="cities"></v-autocompleter>
+                    <!--<v-autocompleter v-model="googleSearch" @enter="autocompleterSubmit" :options="cities"></v-autocompleter>-->
+
+                    <div id="app">
+                        {{ googleSearch }}
+                        <input type="text" v-model="googleSearch" @input="findResultsDebounced" />
+                        <div v-for="city in results" :key="city.name">
+                            <span class="name">{{ city.name }}</span>
+                        </div>
+            	    </div>
 
                     <img class="klaw_mik" src="key_mic.png" title="Narzędzia do wprowadzania tekstu"><br>
                 </div>
@@ -276,7 +284,28 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
+        <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            googleSearch: '',
+            results: []
+        },
+        methods : {
+            findResultsDebounced : Cowboy.debounce(100, function findResultsDebounced() {
+                console.log('Fetch: ', this.googleSearch)
+                console.log(`http://localhost:8080/search?name=${this.googleSearch}`);
+                fetch(`http://localhost:8080/search?name=${this.googleSearch}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Data: ', data);
+                        this.results = data;
+                    });
+            })
+        }
+    })
+  	</script>        
         <!--<script src="cities.js" defer></script>-->
         <script src="autocompleter.js" defer></script>
         <script src="vue.js" defer></script>
